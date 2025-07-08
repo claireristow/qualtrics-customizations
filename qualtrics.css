@@ -1,0 +1,275 @@
+:root {
+  --background-light: var(--palettes-bg-3, #f0f4f9); /* --palettes-bg-3 from qualtrics */
+  --accent-secondary: var(--mixes-primary-1, #b87f00); /* --mixes-primary-1 from qualtrics */
+  --color-black: #171818;
+  --color-white: #ffffff;
+  --color-focus: #3d8eff;
+  --text-light: #2e3030;
+  --font-body-face: var(--font-family, 'Source Serif 4', Times, serif);  /* --font-family from qualtrics */
+  --font-display-face: var(--font-family, 'Work Sans', Arial, Helvetica, sans-serif);  /* --font-family from qualtrics */
+  --font-size-xs: 0.875rem;
+  --font-size-s: 1rem;
+  --font-size-xl: 1.5rem;
+  --line-height-xs: 1.5rem;
+  --line-height-s: 1.5rem;
+  --line-height-m: 2rem;
+  --title: #171818;
+  --layout-padding-xs: 24px;
+  --layout-padding-s: 48px;
+  --layout-padding-m: 72px;
+  --layout-padding-l: 80px;
+  --layout-padding: var(--layout-padding-xs); // 24px (default)
+
+  @media (min-width: 768px) {
+    --layout-padding: var(--layout-padding-s); // 48px
+  }
+
+  @media (min-width: 1280px) {
+    --layout-padding: var(--layout-padding-m); // 72px
+  }
+
+  @media (min-width: 1440px) {
+    --layout-padding: 0;
+  }
+}
+
+/**
+ * The JS added to the theme's footer block provides the "embedded" and "intercept"
+ * body classes.
+ */
+
+/* Remove the extra footer padding on intercept forms. */
+body.intercept .Skin #BrandingFooter {
+    margin-top: 0;
+}
+
+/* Hide the logo on embedded forms. */
+body.embedded #logo-container,
+body.embedded #LogoContainer {
+    display: none;
+}
+
+/* Remove lateral padding from content area to better fill the page width. */
+body.embedded #contents .transition-content {
+    padding: 0;
+}
+
+/* Remove left/right and top/bottom spacing on form when embedded. */
+body.embedded .Skin .SkinInner {
+    max-width: unset;
+    width: auto;
+    padding-top: 0;
+    display: block;
+}
+
+/* Remove left/right padding on question text at all breakpoints. */
+body.embedded .Skin .QuestionText,
+#contents .transition-content,
+#logo-container {
+    padding-inline: 0;
+}
+
+/* Reset button hovers to black with white text. */
+#navigation #previous-button:hover,
+#navigation #next-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Reset button icon hover to white. */
+#navigation #previous-button:hover svg,
+#navigation #next-button:hover svg {
+    fill: white;
+}
+
+.visually-hidden {
+  padding: 0;
+  margin: -1px;
+  white-space: nowrap;
+  border: 0;
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  inline-size: 1px;
+  block-size: 1px;
+  word-wrap: normal;
+  overflow: hidden;
+  inline-size: 1px;
+  block-size: 1px;
+}
+
+.footer__global-footer {
+  @media (min-width: 1440px) {
+    background: linear-gradient(to right, var(--background-light) 50%, var(--color-white) 50%);
+  }
+}
+
+.footer__global-footer a {
+  color: var(--color-black);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+
+.footer__global-footer a.link-paragraph {
+  padding-block: 4px;
+  box-shadow: 0 -1px 0 0 var(--color-black) inset;
+}
+
+.footer__global-footer a.link-paragraph:hover {
+  background: #f0f3f4;
+  box-shadow: 0 -1px 0 0 var(--accent-secondary) inset;
+}
+
+.footer__global-footer .flex-wrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media (min-width: 768px) {
+    flex-flow: row wrap;
+  }
+
+  @media (min-width: 1440px) {
+    max-inline-size: 1280px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+.footer__global-footer .flex-wrapper .footer__inner > * {
+  margin-block-end: 16px;
+}
+
+.footer__global-footer .footer__inner-1 {
+  padding: 32px var(--layout-padding);
+  background-color: var(--background-light);
+  color: var(--color-black);
+
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    padding: 56px var(--layout-padding);
+  }
+
+  @media (min-width: 1280px) {
+    padding: 48px var(--layout-padding);
+  }
+
+  @media (min-width: 1440px) {
+    padding: 48px 80px 48px var(--layout-padding);
+  }
+}
+
+.footer__global-footer .footer__inner-1 .block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0;
+}
+
+.footer__global-footer .site-logo {
+  inline-size: 190px;
+  block-size: auto;
+  margin-inline-end: 24px;
+  transition: transform 300ms ease-in-out;
+}
+
+.footer__global-footer .site-logo:hover {
+  transform: scale(105%);
+}
+
+.footer__global-footer .site-logo:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.footer__global-footer .site-logo:focus-visible {
+  outline: 2px solid var(--color-focus);
+}
+
+.footer__global-footer .site-name a {
+  font-family: var(--font-display-face);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-m);
+  font-weight: 700;
+}
+
+.footer__global-footer .site-name a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.footer__global-footer .site-name a:focus-visible {
+  outline: 2px solid var(--color-focus);
+}
+
+.footer__global-footer .footer__inner-2 {
+  padding: 32px var(--layout-padding);
+  background-color: var(--color-white);
+  color: var(--title);
+
+  @media (min-width: 768px) {
+    flex: 1 0 300px;
+    padding: 32px 56px;
+  }
+
+  @media (min-width: 960px) {
+    padding: 48px 56px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 48px 56px;
+  }
+}
+
+.footer__global-footer .footer__menu > ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer__global-footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer__global-footer ul li {
+  margin: 0;
+  padding: 0;
+  line-height: unset;
+  list-style-type: none;
+}
+
+.footer__global-footer .footer__menu > ul li:nth-child(1) {
+  margin-inline-end: 24px;
+}
+
+.footer__global-footer .footer__menu > ul li:nth-child(2) {
+  color: #c1c2c2;
+  font-size: 15px;
+}
+
+.footer__global-footer .footer__menu > ul li:nth-child(3) {
+  margin-inline-start: 24px;
+}
+
+.footer__global-footer .footer__menu a {
+  font-family: var(--font-display-face);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.footer__global-footer .footer__copyright {
+  font-family: var(--font-body-face);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  font-weight: 400;
+  margin: 0;
+  color: var(--text-light);
+}
+
+.footer__global-footer .footer__copyright a {
+  font-weight: 800;
+}
+
+div#root {
+  height: unset;
+}
