@@ -124,8 +124,7 @@
       addDefaultFooter() {
           const date = new Date();
           const year = date.getFullYear();
-          const footerHTML = `<footer id="iowa-footer">
-  <article class="footer__global-footer">
+          const footerHTML = `<article class="footer__global-footer">
       <div class="flex-wrapper">
           <div class="footer__inner footer__inner-2">
               <p class="footer__copyright">
@@ -135,10 +134,9 @@
               </p>
           </div>
       </div>
-  </article>
-</footer>`;
+  </article>`;
 
-          document.body.insertAdjacentHTML('beforeend', footerHTML);
+          document.getElementById('footer').insertAdjacentHTML('beforeend', footerHTML);
       }
   };
 })();

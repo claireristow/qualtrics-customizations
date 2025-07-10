@@ -90,10 +90,6 @@ body.embedded .Skin .QuestionText,
   block-size: 1px;
 }
 
-.footer__global-footer {
-  padding: 12px;
-}
-
 .footer__global-footer a {
   color: var(--color-black);
   text-decoration: underline;
@@ -143,4 +139,14 @@ body.embedded .Skin .QuestionText,
 
 div#root {
   height: unset;
+}
+
+#page #header-container, #page #survey-canvas, #page #footer {
+  @media (min-width: 64rem) {
+    inline-size: 64rem;
+  }
+}
+
+#page #footer {
+  padding-inline: 0;
 }
