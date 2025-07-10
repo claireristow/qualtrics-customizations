@@ -21,15 +21,15 @@
       init(options) {
           this.debugMode = options.debug;
           this.includeStandAloneFooter = options.includeStandAloneFooter;
-          
+
           if (this.debugMode) {
               console.log("Initializing Qualtrics theme helper. v" + this.version);
           }
-    
+
           // If the form is embedded in an iframe, we need to resize the iframe and add the Qualtrics theme.
           if (this.formIsInAnIframe()) {
               const frameType = this.getFrameType(document.URL);
-      
+
               if (frameType === "embed") {
                   document.body.classList.add('embedded');
                   this.setupHeightReporting();
@@ -127,25 +127,7 @@
           const footerHTML = `<footer id="iowa-footer">
   <article class="footer__global-footer">
       <div class="flex-wrapper">
-          <div class="footer__inner footer__inner-1">
-              <div id="block-sitebranding" class="block block-system block-system-branding-block">
-                  <a href="https://www.iowa.gov/" rel="home" class="site-logo">
-                      <picture>
-                          <source srcset="https://www.iowa.gov/themes/custom/wildrose/logo-dark.svg"
-                              media="(forced-colors: active) and (prefers-color-scheme: dark)">
-                          <img src="https://www.iowa.gov/themes/custom/wildrose/logo-iowa.svg" alt="Back to home page">
-                      </picture>
-                  </a>
-              </div>
-          </div>
-
           <div class="footer__inner footer__inner-2">
-              <nav class="footer__menu" aria-labelledby="footer-menu-title">
-                  <h3 id="footer-menu-title" class="footer__subtitle visually-hidden">Contact Menu</h3>
-                  <ul>
-                      <li><a class="link-paragraph" href="https://www.iowa.gov/feedback">Send Feedback</a></li>
-                  </ul>
-              </nav>
               <p class="footer__copyright">
                   &copy; <span class="footer__copyright-year">${year}</span> State of Iowa - Read our <a
                       href="https://www.iowa.gov/policies" class="link-paragraph link-paragraph--small"
