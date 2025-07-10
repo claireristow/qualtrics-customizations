@@ -118,12 +118,6 @@ body.embedded .Skin .QuestionText,
   @media (min-width: 768px) {
     flex-flow: row wrap;
   }
-
-  @media (min-width: 1440px) {
-    max-inline-size: 1280px;
-    justify-content: center;
-    margin: 0 auto;
-  }
 }
 
 .footer__global-footer .flex-wrapper .footer__inner-2 {
