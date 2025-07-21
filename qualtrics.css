@@ -178,8 +178,12 @@ div#root {
   }
 }
 
+.plug-container #plug {
+  text-align: start;
+}
+
 .plug-container #plug a {
-  padding-block: 0;
+  padding: 0;
   background-color: unset;
   font-family: var(--font-body-face);
   font-size: var(--font-size-xs);
