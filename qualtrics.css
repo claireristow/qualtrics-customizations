@@ -145,10 +145,6 @@ body.embedded .Skin .QuestionText,
   font-weight: 800;
 }
 
-div#root {
-  height: unset;
-}
-
 #page #header-container, #page #survey-canvas, #page #footer {
   @media (min-width: 64rem) {
     inline-size: 64rem;
