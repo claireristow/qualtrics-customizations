@@ -179,7 +179,7 @@ div#root {
 }
 
 .plug-container #plug a {
-  padding-block: 4px;
+  padding-block: 0;
   background-color: unset;
   font-family: var(--font-body-face);
   font-size: var(--font-size-xs);
@@ -187,6 +187,12 @@ div#root {
   font-weight: 400;
   color: var(--text-light);
   box-shadow: 0 -1px 0 0 transparent inset;
+  height: unset;
+}
+
+.plug-container #plug a:hover {
+  background-color: unset;
+  color: var(--text-light);
 }
 
 .plug-container #plug a:hover svg {
